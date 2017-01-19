@@ -39,10 +39,10 @@ function treeFunction() {
 // with another character then joins the array into a string
 // and prints the string to the console
 
-  for (var l = 0; l < treeHeight; l++) {
+  for (var l = 0; l < pineTreeObj.heightValue; l++) {
 
-     pineTree[treeHeight + l] = pineTreeObj.characterValue;
-     pineTree[treeHeight - l] = pineTreeObj.characterValue;
+     pineTree[pineTreeObj.heightValue + l] = pineTreeObj.characterValue;
+     pineTree[pineTreeObj.heightValue - l] = pineTreeObj.characterValue;
 
     var wholeTree = pineTree.join("");
     console.log(wholeTree);
