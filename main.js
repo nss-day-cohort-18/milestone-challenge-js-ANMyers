@@ -46,7 +46,14 @@ var clicker = document.getElementById("submit-button");
 clicker.addEventListener('click', treeFunction)
 
 // enter event listener
-document.addEventListener('keyup', function (potato) {
+var heightBox = document.getElementById("tree-height");
+var characterBox = document.getElementById("tree-character");
+heightBox.addEventListener('keyup', function (potato) {
+  if (potato.which === 13) {
+    treeFunction();
+  }
+});
+characterBox.addEventListener('keyup', function (potato) {
   if (potato.which === 13) {
     treeFunction();
   }
