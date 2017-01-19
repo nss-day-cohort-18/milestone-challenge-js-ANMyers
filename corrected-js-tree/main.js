@@ -1,15 +1,8 @@
-
-
-
 function treeFunction() {
 
   var treeValue = document.getElementById("tree-height").value;
   var treeHeight = Number(treeValue)
-
   var treeCharacter = document.getElementById("tree-character").value;
-
-  var pineTree = [];
-  pineTree[treeValue] = "the array needs a length value";
 
         //test to stop execution if field is blank
         if (treeValue === "") {
@@ -26,14 +19,30 @@ function treeFunction() {
           return;
         }
 
-  for (var k = 0; k < pineTree.length; k++) {
+// Object to store height and character values
+    var pineTreeObj = {
+      heightValue: treeHeight,
+      characterValue: treeCharacter
+    }
+
+  var pineTree = [];
+    pineTree[pineTreeObj.heightValue] = "the array needs a length";
+
+
+// Populates the spaces needed to build the tree
+
+  for (var k = 0; k < pineTreeObj.heightValue; k++) {
     pineTree[k] = " ";
   }
 
+// As the loop iterates it replaces a space around the original character
+// with another character then joins the array into a string
+// and prints the string to the console
+
   for (var l = 0; l < treeHeight; l++) {
 
-     pineTree[treeHeight + l] = treeCharacter;
-     pineTree[treeHeight - l] = treeCharacter;
+     pineTree[treeHeight + l] = pineTreeObj.characterValue;
+     pineTree[treeHeight - l] = pineTreeObj.characterValue;
 
     var wholeTree = pineTree.join("");
     console.log(wholeTree);
@@ -58,9 +67,3 @@ characterBox.addEventListener('keyup', function (potato) {
     treeFunction();
   }
 });
-//tests done below
-
-
-  
-
-
